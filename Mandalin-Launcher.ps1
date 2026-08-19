@@ -1,21 +1,21 @@
 # ============================================================================
-#  Mandarin-Launcher.ps1
-#  Launcher script for Mandarin-Tool
-#  https://github.com/Mehmetyll/Mandarin-Tool
+#  Mandalin-Launcher.ps1
+#  Launcher script for Mandalin-Tool
+#  https://github.com/Mehmetyll/Mandalin-Tool
 #  Made by: Mehmet_yl
 # ============================================================================
 
 $RequiredMajorVersion  = 21
 $JdkInstallerName      = "jdk-21_windows-x64_bin.exe"
-$JarName               = "MandarinTool.jar"
-$JarDownloadUrl        = "https://github.com/Mehmetyll/Mandarin-Tool/releases/download/Mandarin-Tool/MandarinTool.jar"
+$JarName               = "MandalinTool.jar"
+$JarDownloadUrl        = "https://github.com/Mehmetyll/Mandalin-Tool/releases/download/Mandalin-Tool/MandalinTool.jar"
 $JdkDownloadUrl        = "https://download.oracle.com/java/21/latest/jdk-21_windows-x64_bin.exe"
 $JdkInstallDir         = "C:\Program Files\Java\jdk-21"
 $DownloadDir           = Join-Path $env:USERPROFILE "Downloads"
 $Lang = @{}
 
 $LangEN = @{
-    Banner           = "Mandarin-Tool  -  Launcher"
+    Banner           = "Mandalin-Tool  -  Launcher"
     MadeBy           = "Made by: Mehmet_yl"
     Downloading      = "Downloading"
     CheckingJava     = "Checking system Java installation..."
@@ -47,7 +47,7 @@ $LangEN = @{
 }
 
 $LangTR = @{
-    Banner           = "Mandarin-Tool  -  Launcher"
+    Banner           = "Mandalin-Tool  -  Launcher"
     MadeBy           = "Made by: Mehmet_yl"
     Downloading      = "Indiriliyor"
     CheckingJava     = "Sistem Java kurulumu kontrol ediliyor..."
@@ -91,7 +91,7 @@ function Get-FileWithProgress {
 
     $request = [System.Net.HttpWebRequest]::Create($Url)
     $request.AllowAutoRedirect = $true
-    $request.UserAgent = "Mandarin-Launcher/1.0"
+    $request.UserAgent = "Mandalin-Launcher/1.0"
     $request.Timeout   = 1800000 
 
     $response   = $request.GetResponse()
@@ -148,7 +148,7 @@ function Get-JavaMajorVersion {
 
 Clear-Host
 Write-Host ""
-Write-Host " Mandarin-Tool Launcher" -ForegroundColor White
+Write-Host " Mandalin-Tool Launcher" -ForegroundColor White
 Write-Host " Made by: Mehmet_yl" -ForegroundColor DarkGray
 Write-Host ""
 Write-Host " 1) Continue in English" -ForegroundColor Cyan
@@ -276,7 +276,7 @@ if ($systemVersion -ge $RequiredMajorVersion) {
     }
 }
 
-# Download MandarinTool.jar
+# Download MandalinTool.jar
 $jarPath = Join-Path $DownloadDir $JarName
 
 Write-Status ((L "DownloadingJar") -f $JarName)
@@ -294,7 +294,7 @@ try {
     exit 1
 }
 
-# Launch MandarinTool.jar as Administrator
+# Launch MandalinTool.jar as Administrator
 Write-Status ((L "Launching") -f $JarName)
 Write-Warn (L "UacJar")
 Write-Host ""
